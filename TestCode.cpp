@@ -163,7 +163,58 @@ int main()
 		case DRAW_RECT:
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
+//marwan
+case DRAW_SQR:
+		pOut->PrintMessage("Action: Draw a Square  , Click anywhere");
+		break;
+case DRAW_TRI:
+	pOut->PrintMessage("Action: Draw a Triangle , Click anywhere");
+	break;
+case DRAW_HEX:
+	pOut->PrintMessage("Action: Draw a Hexagon , Click anywhere");
+	break;
+case DRAW_CIRC:
+	pOut->PrintMessage("Action: Draw a Circle , Click anywhere");
+	break;
+case DO_SLCT:
+	pOut->PrintMessage("Action: Select figure  ");
+	break;
+case DO_BRDR:
+	pOut->PrintMessage("Action: Change border color ");
+	break;
+case DO_FILL:
+	pOut->PrintMessage("Action: Change filling color ");
+	break;
+case DO_DLT:
+	pOut->PrintMessage("Action: Delete figure ");
+	break;
+case DO_DLTALL:
+	pOut->PrintMessage("Action: Clear all ");
+	break;
+case DO_CPY:
+	pOut->PrintMessage("Action: Copy figure ");
+	break;
+case DO_CUT:
+	pOut->PrintMessage("Action: Cut figure ");
+	break;
+case DO_PST:
+	pOut->PrintMessage("Action: Paste figure ");
+	break;
+case DO_BTOF:
+	pOut->PrintMessage("Action: Bring figure to front ");
+	break;
+case DO_SAVE:
+	pOut->PrintMessage("Action: Save ");
+	break;
+case DO_LOAD:
+	pOut->PrintMessage("Action: Load ");
+	break;
 
+case TO_PLAY:
+	pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
+	pOut->CreatePlayToolBar();
+	break;
+	//
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;
@@ -176,15 +227,22 @@ int main()
 				pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
 				break;
 
+			//marwan
+case PCKCLR:
+	pOut->PrintMessage("Action: Pick color  , Click anywhere");
+	break;
+case PCKSHP:
+	pOut->PrintMessage("Action: Pick figure , Click anywhere");
+	break;
+case PCKBTH:
+	pOut->PrintMessage("Action: Pick both , Click anywhere");
+	break;
+	//
 		case TO_DRAW:
 				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
 				pOut->CreateDrawToolBar();
 				break;
 
-		case TO_PLAY:
-				pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
-				pOut->CreatePlayToolBar();
-				break;
 
 
 		///TODO: Add more cases for the other action types
