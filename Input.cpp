@@ -52,6 +52,24 @@ ActionType Input::GetUserAction() const
 			switch (ClickedItemOrder)
 			{
 			case ITM_RECT: return DRAW_RECT;
+					//marwan
+case ITM_SQR: return DRAW_SQR;
+case ITM_TRI: return DRAW_TRI;
+case ITM_HEX: return DRAW_HEX;
+case ITM_CIRC: return DRAW_CIRC;
+case ITM_SLCT: return DO_SLCT;
+case ITM_BRDR: return DO_BRDR;
+case ITM_FILL: return DO_FILL;
+case ITM_DLT: return DO_DLT;
+case ITM_DLTALL: return DO_DLTALL;
+case ITM_CPY: return DO_CPY;
+case ITM_CUT: return DO_CUT;
+case ITM_PST: return DO_PST;
+case ITM_BTOF: return DO_BTOF;
+case ITM_SAVE: return DO_SAVE;
+case ITM_LOAD: return DO_LOAD;
+case ITM_PLAY: return TO_PLAY;
+	//
 			case ITM_EXIT: return EXIT;	
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -69,6 +87,22 @@ ActionType Input::GetUserAction() const
 	}
 	else	//GUI is in PLAY mode
 	{
+		//marwan
+//Check whick Menu item was clicked
+	//==> This assumes that menu items are lined up horizontally <==
+int ClickedItemOrder = (x / UI.MenuItemWidth);
+//Divide x coord of the point clicked by the menu item width (int division)
+//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
+
+switch (ClickedItemOrder)
+{
+case ITM_PCKCLR: return PCKCLR;
+case ITM_PCKSHP: return PCKSHP;
+case ITM_PCKBTH: return PCKBTH;
+case ITM_DRAW: return TO_DRAW;
+
+default: return EMPTY;	//A click on empty place in desgin toolbar
+	//
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
