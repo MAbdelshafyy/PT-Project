@@ -220,7 +220,7 @@ void Output::DrawHexagon(Point P1, GfxInfo HexagonGfxInfo, bool selected) const
 	pWind->SetBrush(HexagonGfxInfo.FillClr); // Set brush regardless of style for consistency
 	pWind->DrawPolygon(arrx, arry, 6, style);
 }
-oid Output::DrawCirc(Point P1, Point P2, GfxInfo CircleGfxInfo, bool selected) const
+void Output::DrawCirc(Point P1, Point P2, GfxInfo CircleGfxInfo, bool selected) const
 {
 	int r = sqrt((P1.x - P2.x) * (P1.x - P2.x) + (P1.y - P2.y) * (P1.y - P2.y))/2;
 	int iX = (P1.x + P2.x) / 2;
