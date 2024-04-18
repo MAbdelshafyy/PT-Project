@@ -85,6 +85,24 @@ void Output::CreateDrawToolBar() const
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	//marwan
+MenuItemImages[ITM_SQR] = "images\\MenuItems\\Menu_Sqr.jpg";
+MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";
+MenuItemImages[ITM_HEX] = "images\\MenuItems\\Menu_Hex.jpg";
+MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circ.jpg";
+MenuItemImages[ITM_SLCT] = "images\\MenuItems\\Menu_Select.jpg";
+MenuItemImages[ITM_BRDR] = "images\\MenuItems\\Menu_border.jpg";
+MenuItemImages[ITM_FILL] = "images\\MenuItems\\Menu_fill.jpg";
+MenuItemImages[ITM_DLT] = "images\\MenuItems\\Menu_delete.jpg";
+MenuItemImages[ITM_DLTALL] = "images\\MenuItems\\Menu_deleteall.jpg";
+MenuItemImages[ITM_CPY] = "images\\MenuItems\\Menu_copy.jpg";
+MenuItemImages[ITM_CUT] = "images\\MenuItems\\Menu_cut.jpg";
+MenuItemImages[ITM_PST] = "images\\MenuItems\\Menu_paste.jpg";
+MenuItemImages[ITM_BTOF] = "images\\MenuItems\\Menu_fronttoback.jpg";
+MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
+MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_load.jpg";
+MenuItemImages[ITM_PLAY] = "images\\MenuItems\\Menu_play.jpg";
+//
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -106,6 +124,25 @@ void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
 	///TODO: write code to create Play mode menu
+	//marwan
+pWind->SetPen(UI.BkGrndColor, 1);
+pWind->SetBrush(UI.BkGrndColor);
+pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+string PlayMenuItemImages[PLAY_ITM_COUNT];
+PlayMenuItemImages[ITM_PCKCLR] = "images\\MenuItems\\Menu_PickColor.jpg";
+PlayMenuItemImages[ITM_PCKSHP] = "images\\MenuItems\\Menu_PickShape.jpg";
+PlayMenuItemImages[ITM_PCKBTH] = "images\\MenuItems\\Menu_PickBoth.jpg";
+PlayMenuItemImages[ITM_DRAW] = "images\\MenuItems\\Menu_Draw.jpg";
+
+//Draw menu item one image at a time
+for (int i = 0; i < PLAY_ITM_COUNT; i++)
+	pWind->DrawImage(PlayMenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+
+//Draw a line under the toolbar
+pWind->SetPen(RED, UI.LineUnderTBWidth);
+pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
